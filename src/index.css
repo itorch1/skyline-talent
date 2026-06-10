@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+
+  /* --- EXPERIENCES BREAKPOINT --- */
+  --breakpoint-3xl: 120rem;
+
+  /* --- TRANSITIONS & EASING --- */
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+
+  /* --- BRAND PALETTE --- */
+  /* Backgrounds & Base Layers */
+  --color-agency-obsidian: #0a0a0b;
+  --color-agency-onyx: #141416;
+  --color-agency-charcoal: #222225;
+
+  /* Premium Luxury Golds */
+  --color-agency-gold: #d4af37;
+  --color-agency-champagne: #e6ca83;
+  --color-agency-bronze: #a3833c;
+
+  /* Typography & Text */
+  --color-agency-cream: #f7f7f5;
+  --color-agency-silver: #9e9ea4;
+}

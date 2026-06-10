@@ -1,0 +1,29 @@
+const classNameBase =
+  "bg-gradient-to-r from-agency-bronze via-agency-champagne to-agency-gold transition-all " +
+  "bg-[length:200%_auto] bg-left text-agency-obsidian font-sans font-medium tracking-wide " +
+  "hover:bg-right hover:text-agency-obsidian " +
+  "transition-[background-position] duration-300 ease-out inline-block shadow-lg shadow-agency-gold/10 ";
+
+const sizes = {
+  medium: "px-6 py-4 text-xl",
+  small: "px-4 py-2 text-lg"
+};
+
+function Button({ children, href, onClick, size = "medium" }) {
+  const className = classNameBase + sizes[size];
+
+  if (href)
+    return (
+      <a href={href} className={className}>
+        {children}
+      </a>
+    );
+
+  return (
+    <button className={className} onClick={onClick}>
+      {children}
+    </button>
+  );
+}
+
+export default Button;
