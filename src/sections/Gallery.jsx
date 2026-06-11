@@ -64,7 +64,7 @@ export default function Gallery() {
               >
                 {/* 1. Image Layer */}
                 <div
-                  className="absolute inset-0 scale-100 bg-cover bg-top contrast-115 grayscale filter transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
+                  className="absolute inset-0 scale-100 bg-cover bg-top contrast-115 sm:grayscale filter transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
                   style={{ backgroundImage: `url(${model.image})` }}
                 />
 
