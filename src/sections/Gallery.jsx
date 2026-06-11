@@ -58,13 +58,13 @@ export default function Gallery() {
             return (
               <div
                 key={model.id}
-                className={`group bg-agency-onyx border-agency-charcoal/40 relative w-full cursor-pointer overflow-hidden border shadow-2xl transition-all duration-500 aspect-square sm:aspect-4/3 md:aspect-3/4 ${
+                className={`group bg-agency-onyx border-agency-charcoal/40 relative w-full cursor-pointer overflow-hidden border shadow-2xl transition-all duration-500 aspect-square sm:aspect-3/4 ${
                   isHiddenOnMobile ? "hidden md:block" : "block"
                 }`}
               >
                 {/* 1. Image Layer */}
                 <div
-                  className="absolute inset-0 scale-100 bg-cover bg-top contrast-115 grayscale filter transition-all duration-700 ease-out group-hover:scale-105 md:group-hover:grayscale-0"
+                  className="absolute inset-0 scale-100 bg-cover bg-top contrast-115 grayscale filter transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0"
                   style={{ backgroundImage: `url(${model.image})` }}
                 />
 
