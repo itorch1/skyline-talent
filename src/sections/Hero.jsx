@@ -77,7 +77,7 @@ export default function Hero() {
 
         {/* Custom Gradient CTA Button */}
         <div className="mt-10">
-          <Button href="#contact">Request Talent</Button>
+          <Button href="#cta">Request Talent</Button>
         </div>
       </div>
 
