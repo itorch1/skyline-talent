@@ -5,11 +5,10 @@ import hero1 from "../images/hero-1.jpg";
 import hero2 from "../images/hero-2.jpg";
 import hero3 from "../images/hero-3.png";
 
-// High-end, atmospheric editorial imagery
 const HERO_IMAGES = [
-  hero1, // Monaco/Yacht setting vibe
-  hero2, // Luxury travel aesthetic
-  hero3, // Elegant evening activation vibe
+  hero1,
+  hero2,
+  hero3,
 ];
 
 export default function Hero() {
@@ -19,12 +18,11 @@ export default function Hero() {
   function setUpTimer() {
     return setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % HERO_IMAGES.length);
-    }, 5000); // Cross-fades every 5 seconds
+    }, 5000);
   }
 
   useEffect(() => {
     timerRef.current = setUpTimer();
-
     return () => clearInterval(timerRef.current);
   }, []);
 
@@ -35,7 +33,10 @@ export default function Hero() {
   }
 
   return (
-    <section className="bg-agency-obsidian relative mt-18 flex h-[calc(100vh-72px)] w-full items-center justify-center overflow-hidden">
+    /* CHANGED: Removed 'mt-18' and fixed h-[calc(...)]. 
+       ADDED: 'h-dvh' (Dynamic Viewport Height) and 'pt-26' (to cleanly push content below the fixed header) */
+    <section className="bg-agency-obsidian relative flex h-dvh w-full items-center justify-center overflow-hidden pt-26">
+      
       {/* 1. Background Slideshow Layer */}
       <div className="absolute inset-0 z-0">
         {HERO_IMAGES.map((src, index) => (
@@ -53,7 +54,7 @@ export default function Hero() {
       <div className="from-agency-obsidian to-agency-obsidian/60 absolute inset-0 z-10 bg-gradient-to-t via-transparent" />
 
       {/* 3. Main Foreground Content */}
-      <div className="relative z-20 mx-auto flex max-w-5xl flex-col items-center px-6 pt-10 text-center">
+      <div className="relative z-20 mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
         {/* Large Luxury Heading */}
         <h1 className="text-agency-cream max-w-4xl font-serif text-4xl leading-[1.15] tracking-wide uppercase md:text-6xl lg:text-6xl">
           Where Exceptional Talent <br />
