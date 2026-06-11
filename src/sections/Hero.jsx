@@ -56,7 +56,7 @@ export default function Hero() {
       {/* 3. Main Foreground Content */}
       <div className="relative z-20 mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
         {/* Large Luxury Heading */}
-        <h1 className="text-agency-cream max-w-4xl font-serif text-4xl leading-[1.15] tracking-wide uppercase md:text-6xl lg:text-6xl">
+        <h1 className="text-agency-cream max-w-4xl font-serif text-3xl leading-[1.15] tracking-wide uppercase md:text-6xl lg:text-6xl">
           Where Exceptional Talent <br />
           <span className="text-agency-champagne font-normal lowercase italic">
             meets Exceptional Experiences
@@ -71,7 +71,7 @@ export default function Hero() {
         </p>
 
         {/* Core Tagline Values */}
-        <p className="text-agency-silver mt-2 font-sans text-xs font-medium tracking-[0.2em] uppercase md:text-sm">
+        <p className="text-agency-silver mt-2 font-sans text-xs font-medium tracking-[0.2em] uppercase md:text-sm hidden sm:block">
           Discreet • Professional • International
         </p>
 
@@ -82,7 +82,7 @@ export default function Hero() {
       </div>
 
       {/* 4. Minimalist Slide Indicators (Bottom Center) */}
-      <div className="absolute bottom-12 left-1/2 z-20 flex -translate-x-1/2 transform gap-2">
+      <div className="absolute bottom-12 left-1/2 z-20 -translate-x-1/2 transform gap-2 hidden sm:flex">
         {HERO_IMAGES.map((_, index) => (
           <button
             key={index}
