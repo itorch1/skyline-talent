@@ -49,7 +49,7 @@ function Header() {
       ></div>
 
       <header
-        className={`bg-agency-onyx border-agency-charcoal/20 fixed top-0 left-0 z-50 w-full border-b transition-all ${isPageScrolled ? "h-18 py-3" : "h-26 py-5"}`}
+        className={`bg-agency-onyx border-agency-charcoal/20 fixed top-0 left-0 z-50 w-full border-b transition-all ${isPageScrolled ? "h-18 py-3" : "h-22 py-3 sm:h-26 sm:py-5"}`}
       >
         <nav className="mx-auto flex h-full max-w-6xl items-center justify-between px-6">
           <a href="#" className="flex h-full items-center">
