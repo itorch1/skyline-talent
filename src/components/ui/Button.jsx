@@ -6,15 +6,23 @@ const classNameBase =
 
 const sizes = {
   medium: "px-6 py-4 text-xl",
-  small: "px-4 py-2 text-lg"
+  small: "px-4 py-2 text-lg",
+  mediumDynamic: "px-4 py-2 text-lg lg:px-6 lg:py-4 lg:text-xl",
 };
 
-function Button({ children, href, onClick, size = "medium" }) {
-  const className = classNameBase + sizes[size];
+function Button({
+  children,
+  href,
+  onClick,
+  size = "medium",
+  scaleOnScreenSize = false,
+}) {
+  const className =
+    classNameBase + `${scaleOnScreenSize && size!== 'small' ? sizes.mediumDynamic : sizes[size]}`;
 
   if (href)
     return (
-      <a href={href} className={className}>
+      <a href={href} className={className} onClick={onClick}>
         {children}
       </a>
     );

@@ -3,7 +3,7 @@ import Button from "../components/ui/Button";
 export default function CTA() {
   return (
     <section
-      className="bg-agency-obsidian border-agency-charcoal relative z-20 overflow-hidden border-t scroll-mt-22"
+      className="bg-agency-obsidian border-agency-charcoal relative z-20 scroll-mt-18 overflow-hidden border-t"
       id="cta"
     >
       {/* 50/50 Grid Container */}

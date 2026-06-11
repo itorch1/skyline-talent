@@ -3,7 +3,7 @@ function NavLink({ children, to, isPageScrolled }) {
     <li>
       <a
         href={to}
-        className={`text-agency-silver hover:text-agency-champagne transition-color duration-300 ${isPageScrolled ? "text-lg" : "text-xl"}`}
+        className={`text-agency-silver hover:text-agency-champagne transition-color duration-300 ${isPageScrolled ? "text-lg" : "lg:text-xl text-lg"}`}
       >
         {children}
       </a>

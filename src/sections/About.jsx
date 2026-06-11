@@ -13,7 +13,7 @@ const EXPERIENCES = [
 export default function AboutUs() {
   return (
     <section
-      className="bg-agency-obsidian border-agency-charcoal relative z-20 border-t py-24 md:py-32 scroll-mt-22"
+      className="bg-agency-obsidian border-agency-charcoal relative z-20 border-t py-24 md:py-32 scroll-mt-18"
       id="about"
     >
       <div className="mx-auto max-w-7xl px-6">

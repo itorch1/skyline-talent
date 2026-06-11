@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import Button from "../components/ui/Button";
 
-import hero1 from '../images/hero-1.jpg'
-import hero2 from '../images/hero-2.jpg'
-import hero3 from '../images/hero-3.png'
+import hero1 from "../images/hero-1.jpg";
+import hero2 from "../images/hero-2.jpg";
+import hero3 from "../images/hero-3.png";
 
 // High-end, atmospheric editorial imagery
 const HERO_IMAGES = [
@@ -30,13 +30,12 @@ export default function Hero() {
 
   function handleClickSlideIndicator(index) {
     setCurrentImageIndex(index);
-    console.log('clearing interval')
     clearInterval(timerRef.current);
     timerRef.current = setUpTimer();
   }
 
   return (
-    <section className="bg-agency-obsidian relative flex h-[calc(100vh-88px)] w-full items-center justify-center overflow-hidden mt-[88px]">
+    <section className="bg-agency-obsidian relative mt-18 flex h-[calc(100vh-72px)] w-full items-center justify-center overflow-hidden">
       {/* 1. Background Slideshow Layer */}
       <div className="absolute inset-0 z-0">
         {HERO_IMAGES.map((src, index) => (

@@ -49,7 +49,7 @@ export default function HowItWorks() {
   const currentSteps = activeTab === "clients" ? CLIENT_STEPS : MODEL_STEPS;
 
   return (
-    <section className="bg-agency-obsidian border-agency-charcoal relative z-20 border-t py-24 md:py-32 scroll-mt-22" id="how">
+    <section className="bg-agency-obsidian border-agency-charcoal relative z-20 border-t py-24 md:py-32 scroll-mt-18" id="how">
       <div className="mx-auto max-w-7xl px-6">
         {/* --- SECTION HEADER --- */}
         <div className="mb-16 flex flex-col items-center text-center md:mb-24">
