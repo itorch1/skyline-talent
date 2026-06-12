@@ -2,11 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import Button from "../ui/Button";
 import Logo from "../ui/Logo";
 import NavLink from "./NavLink";
+import { useTranslation } from "react-i18next";
 
 function Header() {
   const [isPageScrolled, setIsPageScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const sentinelRef = useRef(null);
+  const { t, i18n } = useTranslation();
 
   // IntersectionObserver for tracking whether page was scrolled
   useEffect(function () {
@@ -41,6 +43,21 @@ function Header() {
     setIsMenuOpen(false);
   };
 
+  const toggleLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+  // Safe fallback comparison check for abbreviation changes
+  const currentLang = i18n.language || "en";
+
+  // Dynamic Translation Array for Mobile Renders
+  const mobileLinks = [
+    { name: t("header.how"), href: "#how", index: "01" },
+    { name: t("header.gallery"), href: "#gallery", index: "02" },
+    { name: t("header.about"), href: "#about", index: "03" },
+    { name: t("header.contacts"), href: "#contacts", index: "04" },
+  ];
+
   return (
     <>
       <div
@@ -49,35 +66,62 @@ function Header() {
       ></div>
 
       <header
-        className={`bg-agency-onyx border-agency-charcoal/20 fixed top-0 left-0 z-50 w-full border-b transition-all ${isPageScrolled ? "h-18 py-3" : "h-22 py-3 sm:h-26 sm:py-5"}`}
+        className={`bg-agency-onyx border-agency-charcoal/20 fixed top-0 left-0 z-50 w-full border-b transition-all ${
+          isPageScrolled ? "h-18 py-3" : "h-22 py-3 sm:h-26 sm:py-5"
+        }`}
       >
         <nav className="mx-auto flex h-full max-w-6xl items-center justify-between px-6">
           <a href="#" className="flex h-full items-center">
             <Logo />
           </a>
-          <ul className={`hidden items-center gap-12 md:flex`}>
+          
+          {/* --- DESKTOP NAVIGATION --- */}
+          <ul className="hidden items-center gap-10 md:flex">
             <NavLink to="#how" isPageScrolled={isPageScrolled}>
-              How It Works
+              {t("header.how")}
             </NavLink>
             <NavLink to="#gallery" isPageScrolled={isPageScrolled}>
-              Gallery
+              {t("header.gallery")}
             </NavLink>
             <NavLink to="#about" isPageScrolled={isPageScrolled}>
-              About Us
+              {t("header.about")}
             </NavLink>
             <NavLink to="#contacts" isPageScrolled={isPageScrolled}>
-              Contacts
+              {t("header.contacts")}
             </NavLink>
-            <li>
-              <Button
-                href="#cta"
-                size={isPageScrolled ? "small" : "medium"}
-                scaleOnScreenSize={true}
-              >
-                Request Talent
-              </Button>
-            </li>
           </ul>
+
+          {/* --- DESKTOP RIGHT CONTROLS (CTA + SWITCHER) --- */}
+          <div className="hidden items-center gap-6 md:flex">
+            <Button
+              href="#cta"
+              size={isPageScrolled ? "small" : "medium"}
+              scaleOnScreenSize={true}
+            >
+              {t("header.cta")}
+            </Button>
+            
+            {/* Positioned on the absolute right edge */}
+            <div className="flex items-center font-sans text-xs font-semibold tracking-widest text-agency-silver uppercase border-l border-agency-charcoal/40 pl-6 h-4">
+              <button
+                onClick={() => toggleLanguage("en")}
+                className={`transition-colors duration-300 focus:outline-none cursor-pointer ${
+                  currentLang.startsWith("en") ? "text-agency-gold" : "text-agency-silver/40 hover:text-agency-silver"
+                }`}
+              >
+                EN
+              </button>
+              <span className="mx-2 text-agency-charcoal/40 select-none">/</span>
+              <button
+                onClick={() => toggleLanguage("ukr")}
+                className={`transition-colors duration-300 focus:outline-none cursor-pointer ${
+                  currentLang.startsWith("uk") ? "text-agency-gold" : "text-agency-silver/40 hover:text-agency-silver"
+                }`}
+              >
+                UKR
+              </button>
+            </div>
+          </div>
 
           {/* --- MOBILE HAMBURGER TOGGLE --- */}
           <button
@@ -118,19 +162,38 @@ function Header() {
         >
           {/* Main Menu Context Area */}
           <div className="mx-auto flex w-full max-w-lg flex-col px-8 pt-32">
-            {/* Micro Category Tag */}
-            <span className="text-agency-gold border-agency-charcoal/40 mb-8 border-b pb-4 font-sans text-[10px] tracking-[0.4em] uppercase">
-              Navigation
-            </span>
+            
+            {/* Header Plate for Mobile Menu: Category Tag + Integrated Switcher */}
+            <div className="border-agency-charcoal/40 mb-8 flex items-center justify-between border-b pb-4">
+              <span className="text-agency-gold font-sans text-[10px] tracking-[0.4em] uppercase">
+                Navigation
+              </span>
+              
+              {/* Refined Mobile Language Switcher */}
+              <div className="flex items-center font-sans text-[11px] font-bold tracking-widest uppercase">
+                <button
+                  onClick={() => toggleLanguage("en")}
+                  className={`py-1 transition-colors ${
+                    currentLang.startsWith("en") ? "text-agency-gold" : "text-agency-silver/30"
+                  }`}
+                >
+                  EN
+                </button>
+                <span className="text-agency-charcoal/40 mx-2 select-none">/</span>
+                <button
+                  onClick={() => toggleLanguage("ukr")}
+                  className={`py-1 transition-colors ${
+                    currentLang.startsWith("uk") ? "text-agency-gold" : "text-agency-silver/30"
+                  }`}
+                >
+                  UKR
+                </button>
+              </div>
+            </div>
 
             {/* Elegant Editorial Menu Links Grid */}
             <nav className="flex flex-col">
-              {[
-                { name: "How It Works", href: "#how", index: "01" },
-                { name: "Gallery", href: "#gallery", index: "02" },
-                { name: "About Us", href: "#about", index: "03" },
-                { name: "Contacts", href: "#contacts", index: "04" },
-              ].map((link) => (
+              {mobileLinks.map((link) => (
                 <a
                   key={link.index}
                   href={link.href}
@@ -157,7 +220,7 @@ function Header() {
                 onClick={handleMobileLinkClick}
                 className="w-full justify-center text-center"
               >
-                Request Talent
+                {t("header.cta")}
               </Button>
             </div>
           </div>
@@ -166,7 +229,7 @@ function Header() {
           <div className="text-agency-silver/30 mx-auto flex w-full max-w-lg items-center justify-between px-8 pt-12 pb-8 font-sans text-[9px] tracking-[0.25em] uppercase">
             <span className="flex items-center gap-2">
               <span className="bg-agency-gold inline-block h-1 w-1 animate-pulse rounded-full" />
-              SKyline Talent
+              Skyline Talent
             </span>
           </div>
         </div>

@@ -1,0 +1,104 @@
+{
+  "header": {
+    "how": "How It Works",
+    "gallery": "Gallery",
+    "about": "About Us",
+    "contacts": "Contacts",
+    "cta": "Request Talent"
+  },
+  "hero": {
+    "titleNormal": "Where Exceptional Talent",
+    "titleItalic": "meets Exceptional Experiences",
+    "description": "Ukrainian models for luxury events, fashion shows, hospitality experiences, yacht gatherings, nightlife activations, and international campaigns.",
+    "values": "Discreet • Professional • International"
+  },
+  "gallery": {
+    "tag": "Roster",
+    "title": "Featured Talent",
+    "subtitle": "Exclusive representation of premium models for luxury events, brand activations, and international placements.",
+    "status": "Available",
+    "unit": "cm",
+    "btnExpand": "View Full Roster",
+    "btnCollapse": "Collapse Roster"
+  },
+  "howItWorks": {
+    "tag": "Process",
+    "title": "How It Works",
+    "switchers": {
+      "clients": "For Clients",
+      "models": "For Models"
+    },
+    "clientSteps": {
+      "one": {
+        "title": "Submit Your Vision",
+        "desc": "Share your event, campaign, destination, or project requirements with our concierge team."
+      },
+      "two": {
+        "title": "Receive Curated Talent",
+        "desc": "Our team recommends highly professional models perfectly aligned with your brand, audience, and specific objectives."
+      },
+      "three": {
+        "title": "Create An Exceptional Experience",
+        "desc": "Selected talent is carefully coordinated and prepared, ensuring a flawless integration into your premium event from start to finish."
+      }
+    },
+    "modelSteps": {
+      "one": {
+        "title": "Apply To Skyline",
+        "desc": "Submit your high-quality portfolio, active social profiles, and essential professional measurements securely through our platform."
+      },
+      "two": {
+        "title": "Join The Network",
+        "desc": "Accepted applicants gain exclusive placement within our private roster, opening doors to curated international opportunities."
+      },
+      "three": {
+        "title": "Travel & Collaborate",
+        "desc": "Participate in luxury hospitality experiences, destination events, elite fashion showcases, and high-end brand campaigns worldwide."
+      }
+    },
+    "ctas": {
+      "clients": "Request A Custom Proposal",
+      "models": "Submit Your Application"
+    }
+  },
+  "about": {
+    "tag": "Exclusive Network",
+    "titleMain": "Connecting Ukrainian Talent",
+    "titleItalic": "with global opportunities",
+    "p1": "Founded with a vision of connecting exceptional Ukrainian talent with world-class opportunities, <0>Skyline Talent</0> operates at the intersection of fashion, hospitality, luxury lifestyle, and event culture.",
+    "p2": "Our models are selected not only for their appearance, but for their professionalism, communication skills, social presence, and ability to represent premium brands and experiences.",
+    "p3": "From Monaco and Cannes to Dubai, Mykonos, and Miami, Skyline Talent supports clients seeking to elevate the atmosphere, image, and success of their events, campaigns, and brand experiences through carefully selected talent.",
+    "p4": "Whether for a fashion show, hospitality activation, luxury venue, yacht event, destination experience, content production, or private social gathering, our team delivers talent that reflects the standards of the world's most exclusive environments.",
+    "quote": "\"We believe the right people transform an event from memorable to unforgettable.\""
+  },
+  "ctaSection": {
+    "clients": {
+      "tag": "For Clients",
+      "titleNormal": "Elevate Your",
+      "titleItalic": "next event",
+      "desc": "Partner with Skyline to secure premium, highly professional talent for your upcoming luxury brand activations, yacht gatherings, international campaigns, or private social experiences. Let us handle the details seamlessly.",
+      "btn": "Book Talent"
+    },
+    "models": {
+      "tag": "For Models",
+      "titleNormal": "Join The",
+      "titleItalic": "roster",
+      "desc": "We provide exclusive representation for outstanding talent, connecting you with elite global opportunities, luxury hospitality partnerships, and premium international showcases. Build your career in secure, curated environments.",
+      "btn": "Apply Instantly"
+    }
+  },
+  "footer": {
+    "tagline": "Boutique Talent Representation",
+    "description": "Connecting exceptional Ukrainian talent with premier international luxury experiences, fashion showcases, and elite campaigns worldwide.",
+    "registryTitle": "Concierge Registry",
+    "boxBooking": "Talent Booking",
+    "boxDirect": "Direct Line",
+    "boxTelegram": "Telegram Concierge",
+    "boxScouting": "Model Scouting",
+    "boxChat": "Secure Chat",
+    "boxWhatsApp": "WhatsApp Secure",
+    "boxGeneral": "General Enquiries",
+    "rights": "Skyline Talent Management. All rights reserved.",
+    "backToTop": "Back to top"
+  }
+}

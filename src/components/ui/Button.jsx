@@ -7,7 +7,7 @@ const classNameBase =
 const sizes = {
   medium: "px-6 py-4 text-xl",
   small: "px-4 py-2 text-lg",
-  mediumDynamic: "px-4 py-2 text-lg lg:px-6 lg:py-4 lg:text-xl",
+  mediumDynamic: "px-4 py-2 text-lg xl:px-6 xl:py-4 xl:text-xl",
 };
 
 function Button({

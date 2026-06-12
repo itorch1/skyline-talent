@@ -1,26 +1,18 @@
-const EXPERIENCES = [
-  "Fashion shows",
-  "Luxury yacht events",
-  "Destination weekends",
-  "VIP nightlife",
-  "Hospitality partnerships",
-  "Brand activations",
-  "Content productions",
-  "Private social gatherings",
-  "Luxury travel experiences",
-];
+import { Trans, useTranslation } from "react-i18next";
 
 export default function AboutUs() {
+  const { t } = useTranslation();
+
   return (
     <section
-      className="bg-agency-obsidian border-agency-charcoal relative z-20 border-t py-24 md:py-32 scroll-mt-18"
+      className="bg-agency-obsidian border-agency-charcoal relative z-20 scroll-mt-18 border-t py-24 md:py-32"
       id="about"
     >
       <div className="mx-auto max-w-7xl px-6">
         {/* --- SECTION HEADER/SUBTITLE PREFIX --- */}
         <div className="mb-8">
           <span className="text-agency-gold font-sans text-xs font-medium tracking-[0.3em] uppercase md:text-sm">
-            Exclusive Network
+            {t("about.tag")}
           </span>
         </div>
 
@@ -29,9 +21,10 @@ export default function AboutUs() {
           {/* Left Column: Massive Statement Title (Spans 5 grid cols) */}
           <div className="lg:col-span-5">
             <h2 className="text-agency-cream font-serif text-3xl leading-[1.1] tracking-wide uppercase md:text-5xl lg:text-6xl">
-              Connecting Ukrainian Talent <br />
+              {t("about.titleMain")}
+              <br />
               <span className="text-agency-champagne mt-2 block font-normal lowercase italic">
-                with global opportunities
+                {t("about.titleItalic")}
               </span>
             </h2>
           </div>
@@ -39,35 +32,17 @@ export default function AboutUs() {
           {/* Right Column: Narrative Copy Blocks (Spans 7 grid cols) */}
           <div className="text-agency-silver space-y-6 font-sans text-base leading-relaxed md:text-lg lg:col-span-7">
             <p>
-              Founded with a vision of connecting exceptional Ukrainian talent
-              with world-class opportunities,
-              <span className="text-agency-cream font-medium">
-                {" "}
-                Skyline Talent
-              </span>{" "}
-              operates at the intersection of fashion, hospitality, luxury
-              lifestyle, and event culture.
+              <Trans i18nKey="about.p1">
+                <span className="text-agency-cream font-medium">
+                  Skyline Tasd
+                </span>
+              </Trans>
             </p>
-            <p>
-              Our models are selected not only for their appearance, but for
-              their professionalism, communication skills, social presence, and
-              ability to represent premium brands and experiences.
-            </p>
-            <p>
-              From Monaco and Cannes to Dubai, Mykonos, and Miami, Skyline
-              Talent supports clients seeking to elevate the atmosphere, image,
-              and success of their events, campaigns, and brand experiences
-              through carefully selected talent.
-            </p>
-            <p>
-              Whether for a fashion show, hospitality activation, luxury venue,
-              yacht event, destination experience, content production, or
-              private social gathering, our team delivers talent that reflects
-              the standards of the world's most exclusive environments.
-            </p>
+            <p>{t("about.p2")}</p>
+            <p>{t("about.p3")}</p>
+            <p>{t("about.p4")}</p>
             <p className="text-agency-champagne pt-4 font-serif text-xl italic md:text-2xl">
-              "We believe the right people transform an event from memorable to
-              unforgettable."
+              {t("about.quote")}
             </p>
           </div>
         </div>

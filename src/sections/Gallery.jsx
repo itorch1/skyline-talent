@@ -8,21 +8,23 @@ import girl6 from "../images/girl6.jpg";
 import girl7 from "../images/girl7.jpg";
 import girl3 from "../images/girl8.jpg";
 import girl9 from "../images/girl9.jpg";
+import { useTranslation } from "react-i18next";
 
 const MODELS = [
-  { id: 1, name: "Valeria", height: "172 cm", image: girl1 },
-  { id: 2, name: "Anastasia", height: "176 cm", image: girl2 },
-  { id: 3, name: "Daria", height: "173 cm", image: girl3 },
-  { id: 4, name: "Ekaterina", height: "170 cm", image: girl4 },
-  { id: 5, name: "Angelina", height: "175 cm", image: girl5 },
-  { id: 6, name: "Sofia", height: "168 cm", image: girl6 },
-  { id: 7, name: "Karina", height: "172 cm", image: girl7 },
-  { id: 8, name: "Alina", height: "178 cm", image: girl8 },
-  { id: 9, name: "Kristina", height: "168 cm", image: girl9 },
+  { id: 1, name: "Valeria", height: "172", image: girl1 },
+  { id: 2, name: "Anastasia", height: "176", image: girl2 },
+  { id: 3, name: "Daria", height: "173", image: girl3 },
+  { id: 4, name: "Ekaterina", height: "170", image: girl4 },
+  { id: 5, name: "Angelina", height: "175", image: girl5 },
+  { id: 6, name: "Sofia", height: "168", image: girl6 },
+  { id: 7, name: "Karina", height: "172", image: girl7 },
+  { id: 8, name: "Alina", height: "178", image: girl8 },
+  { id: 9, name: "Kristina", height: "168", image: girl9 },
 ];
 
 export default function Gallery() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const {t} = useTranslation();
 
   return (
     <section
@@ -34,14 +36,13 @@ export default function Gallery() {
         {/* --- SECTION HEADER --- */}
         <div className="mb-16 flex flex-col items-center text-center md:mb-24">
           <span className="text-agency-gold mb-3 font-sans text-xs font-medium tracking-[0.3em] uppercase md:text-sm">
-            Roster
+            {t("gallery.tag")}
           </span>
           <h2 className="text-agency-cream font-serif text-3xl tracking-wide uppercase md:text-5xl">
-            Featured Talent
+            {t("gallery.title")}
           </h2>
           <p className="text-agency-silver mx-auto mt-4 max-w-xl font-sans text-sm leading-relaxed md:text-base">
-            Exclusive representation of premium models for luxury events, brand
-            activations, and international placements.
+            {t("gallery.subtitle")}
           </p>
         </div>
 
@@ -83,8 +84,8 @@ export default function Gallery() {
 
                   {/* Metadata layer: Always visible on mobile screens for better accessibility, hovers on desktop */}
                   <div className="text-agency-silver flex items-center justify-between font-sans text-[10px] tracking-wider uppercase md:h-0 md:text-xs md:opacity-0 md:transition-all md:duration-500 md:ease-out md:group-hover:h-5 md:group-hover:opacity-100">
-                    <span>{model.height}</span>
-                    <span className="text-agency-gold font-medium">Available</span>
+                    <span>{`${model.height} ${t("gallery.unit")}`}</span>
+                    <span className="text-agency-gold font-medium">{t("gallery.status")}</span>
                   </div>
                 </div>
               </div>
@@ -99,7 +100,7 @@ export default function Gallery() {
             className="group flex flex-col items-center space-y-2 text-agency-silver hover:text-agency-gold transition-colors py-2 cursor-pointer focus:outline-none"
           >
             <span className="font-sans text-xs font-semibold tracking-[0.25em] uppercase">
-              {isExpanded ? "Collapse Roster" : "View Full Roster"}
+              {isExpanded ? t("gallery.btnCollapse") : t("gallery.btnExpand")}
             </span>
             <div className="relative w-16 h-px bg-agency-charcoal overflow-hidden">
               <div 
